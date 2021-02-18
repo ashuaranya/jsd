@@ -32,8 +32,24 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
 
+$routes->get('/', 'Home::index');
+$routes->get('dashboard', 'Dashboard::index', ['filter' => 'auth']);
+
+$routes->get('logout', 'Login::logout', ['filter' => 'auth']);
+
+$routes->match(['get','post'],'admin', 'Login::index', ['filter' => 'noauth']);
+$routes->match(['get','post'],'auth', 'Login::auth', ['filter' => 'noauth']);
+$routes->match(['get','post'],'register', 'Register::index', ['filter' => 'noauth']);
+$routes->match(['get','post'],'save', 'Register::save', ['filter' => 'noauth']);
+
+// CRUD RESTful Routes
+$routes->get('navs-list', 'Nav::index');
+$routes->get('nav-form', 'Nav::create');
+$routes->post('submit-form', 'Nav::store');
+$routes->get('edit-view/(:num)', 'Nav::singleNav/$1');
+$routes->post('update', 'Nav::update');
+$routes->get('delete/(:num)', 'Nav::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
@@ -47,7 +63,6 @@ $routes->get('/', 'Home::index');
  * You will have access to the $routes object within that file without
  * needing to reload it.
  */
-if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
-{
+if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')){
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

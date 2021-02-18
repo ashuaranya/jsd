@@ -6,6 +6,7 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('welcome_message');
+		$data['page_title'] = 'JSD';
+		return view('main', $data);
 	}
 }
