@@ -36,16 +36,18 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-           aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link <?= ($active_link == 'content') ? 'active' : 'collapsed' ?>" href="#" data-toggle="collapse" data-target="#collapsePages"
+           aria-expanded="<?= ($active_link == 'content') ? true : false ?>" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
             <span>Manage Page Content</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages" class="collapse <?= (in_array($active_link, ['footer','contactus','testimonial','projects','about','home'])) ? 'show' : '' ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item <?= ($active_link == 'home') ? 'active' : '' ?>" href="<?= base_url('content/edit-content/home') ?>">Home</a>
                 <?php foreach($left_navs as $left_nav) : ?>
-                    <a class="collapse-item" href="<?= base_url($left_nav['link']) ?>"><?= $left_nav['title'] ?></a>
+                    <a class="collapse-item <?= ($left_nav['nav_type'] == $active_link) ? 'active' : '' ?>" href="<?= base_url('content/edit-content/'.$left_nav['nav_type']) ?>"><?= $left_nav['title'] ?></a>
                 <?php endforeach;?>
+                <a class="collapse-item <?= ($active_link == 'footer') ? 'active' : '' ?>" href="<?= base_url('content/edit-content/footer') ?>">Footer</a>
             </div>
         </div>
     </li>

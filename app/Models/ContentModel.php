@@ -8,13 +8,13 @@ class ContentModel extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'contents';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'content_id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['content_type','content_id','heading','subheading','background_image','extra'];
 
 	// Dates
 	protected $useTimestamps        = false;

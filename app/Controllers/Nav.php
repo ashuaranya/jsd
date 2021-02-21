@@ -42,10 +42,10 @@ class Nav extends BaseController
     // show single nav
     public function singleNav($id = null){
         $navModel = new NavModel();
-        $data['user_obj'] = $navModel->where('nav_id', $id)->first();
+        $data['nav_obj'] = $navModel->where('nav_id', $id)->first();
         $data['page_title'] = 'Navbar';
         $data['active_link'] = 'navbar';
-        $data['heading'] = 'Manage Navbar';
+        $data['heading'] = 'Edit Navbar';
         $data['left_navs'] = $navModel->orderBy('nav_order', 'ASC')->findAll();
         return view('nav/edit_nav', $data);
     }
@@ -54,6 +54,7 @@ class Nav extends BaseController
     public function update(){
         $navModel = new NavModel();
         $id = $this->request->getVar('nav_id');
+
         $data = [
             'title' => $this->request->getVar('title'),
             'nav_order'  => $this->request->getVar('nav_order'),
