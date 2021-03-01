@@ -30,11 +30,15 @@ echo view('common/header.php');
                               action="<?= site_url('content/update/'.$content_obj['content_type']) ?>">
                             <input type="hidden" name="content_id" value="<?= $content_obj['content_id'] ?>" class="form-control">
                             <input type="hidden" name="content_background_image" value="<?= trim($content_obj['background_image']) ?>" class="form-control">
+                            <input type="hidden" name="content_type" value="<?= $content_obj['content_type'] ?>" class="form-control">
+
                             <?php echo $session->getFlashdata('sucess_message'); ?>
                             <?php echo $session->getFlashdata('error_message'); ?>
                             <div class="form-group">
                                 <label><b>Background Image</b></label><br>
-                                <img accept="image/*" height="150" width="150" src="<?= base_url('assets/uploads/'.$content_obj['background_image']) ?>">
+                                <?php if(trim($content_obj['background_image']) !== "") { ?>
+                                    <img accept="image/*" height="150" width="150" src="<?= base_url('assets/uploads/'.$content_obj['background_image']) ?>">
+                                <?php } ?>
                                 <input type="file"  name="background_image" class="form-control">
                             </div>
                             <div class="form-group">
@@ -85,17 +89,98 @@ echo view('common/footer_links.php');
 <script>
 
     ClassicEditor
-        .create( document.querySelector( '#heading' ) )
+        .create( document.querySelector( '#heading' ),{
+            toolbar: {
+                items: [
+                    'heading',
+                    '|',
+                    'bold',
+                    'italic',
+                    'link',
+                    'bulletedList',
+                    'numberedList',
+                    '|',
+                    'indent',
+                    'outdent',
+                    '|',
+                    'imageUpload',
+                    'htmlEmbed',
+                    'insertTable',
+                    'mediaEmbed',
+                    'undo',
+                    'redo'
+                ]
+            },
+            language: 'en',
+            image: {
+                toolbar: [
+                    'imageTextAlternative',
+                    'imageStyle:full',
+                    'imageStyle:side'
+                ]
+            },
+            table: {
+                contentToolbar: [
+                    'tableColumn',
+                    'tableRow',
+                    'mergeTableCells'
+                ]
+            },
+            licenseKey: '',
+        })
         .catch( error => {
+            console.error( 'Oops, something went wrong!' );
+            console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+            console.warn( 'Build id: pz93cy9ux3cs-wsd16ukcoufg' );
             console.error( error );
-        } );
+        });
 
     ClassicEditor
-        .create( document.querySelector( '#subheading' ) )
+        .create( document.querySelector( '#subheading' ),{
+            toolbar: {
+                items: [
+                    'heading',
+                    '|',
+                    'bold',
+                    'italic',
+                    'link',
+                    'bulletedList',
+                    'numberedList',
+                    '|',
+                    'indent',
+                    'outdent',
+                    '|',
+                    'imageUpload',
+                    'htmlEmbed',
+                    'insertTable',
+                    'mediaEmbed',
+                    'undo',
+                    'redo'
+                ]
+            },
+            language: 'en',
+            image: {
+                toolbar: [
+                    'imageTextAlternative',
+                    'imageStyle:full',
+                    'imageStyle:side'
+                ]
+            },
+            table: {
+                contentToolbar: [
+                    'tableColumn',
+                    'tableRow',
+                    'mergeTableCells'
+                ]
+            },
+            licenseKey: '',
+        })
         .catch( error => {
+            console.error( 'Oops, something went wrong!' );
+            console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+            console.warn( 'Build id: pz93cy9ux3cs-wsd16ukcoufg' );
             console.error( error );
         } );
-
     if ($("#add_create").length > 0) {
         $("#add_create").validate({
             rules: {

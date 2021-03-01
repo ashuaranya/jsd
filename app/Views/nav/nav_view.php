@@ -56,7 +56,7 @@ echo view('common/header.php');
                                     <td>
                                         <a href="<?php echo base_url('edit-view/'.$nav['nav_id']);?>" class="btn btn-primary btn-sm">Edit</a>
 <!--                                        <a href="--><?php //echo base_url('delete/'.$nav['nav_id']);?><!--" class="btn btn-danger btn-sm">Delete</a>-->
-
+        TRE
                                     </td>
                                 </tr>
                                 <?php endforeach;?>

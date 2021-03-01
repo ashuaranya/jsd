@@ -1,6 +1,6 @@
 <a class="skip-to-content" href="#content">Skip to Content</a>
 <header id="header" class="main-header" role="banner">
-    <a href="index.html" class="header-logo" id="header-logo">JSD</a>
+    <a href="<?= base_url('/') ?>" class="header-logo" id="header-logo">JSD</a>
 	<button class="menu-button" id="menuBtn" type="button" aria-label="Menu" aria-controls="main-menu">
 		<i></i>
 		<i></i>

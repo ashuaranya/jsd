@@ -29,6 +29,7 @@ echo view('common/header.php');
                         <form enctype="multipart/form-data" method="post" id="add_create" name="add_create"
                               action="<?= site_url('content/update/'.$content_obj['content_type']) ?>">
                             <input type="hidden" name="content_id" value="<?= $content_obj['content_id'] ?>" class="form-control">
+                            <input type="hidden" name="content_type" value="<?= $content_obj['content_type'] ?>" class="form-control">
                             <input type="hidden" name="content_background_image" value="<?= trim($content_obj['background_image']) ?>" class="form-control">
                             <?php echo $session->getFlashdata('sucess_message'); ?>
                             <?php echo $session->getFlashdata('error_message'); ?>

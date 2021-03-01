@@ -23,8 +23,7 @@ ul{
     list-style:none
 }
 ul li{
-    list-style-image:url(data:image/gif;
-    base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+    list-style-image:url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
 }
 blockquote,q{
     quotes:none
@@ -583,7 +582,7 @@ footer.main-footer>div{
 		bottom: 0;
 		box-shadow: 0px 0px 3px #ccc;
     }
-    footer.main-footer>div{
+    footer.main-footer>div>div{
         letter-spacing:normal;
         display:-moz-inline-stack;
         display:inline-block;
@@ -970,7 +969,7 @@ button#menu-button {
 }
 menu.main-menu{
 	text-align: center;
-	flex: 80%;
+	flex: 50%;
     color:#121212;
 }
 menu.main-menu .site-menu li{
@@ -998,7 +997,7 @@ body.menu-open menu.main-menu{
     opacity:1;
     transition-delay:0s
 }
-.fullscreen.home-slider h1 {
+.fullscreen.home-slider h1, .fullscreen.home-slider h1 p {
     font-size: 52px;
     line-height: 62px;
 }
@@ -1032,6 +1031,14 @@ div#about {
     padding: 0 4em;
 	z-index: 2;
 }
+.recent-project-section {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.recent-project-section h2 {
+    font-size: 3.5em;
+    margin: 15px 0;
+}
 .recent-project-full button.btn-more,
 .testimonials button.btn-more {
     font-size: 15px;
@@ -1042,7 +1049,7 @@ div#about {
     font-weight: 500;
 	margin-top: 20px;
 }
-.testimonials button.btn-more {
+.testimonials .btn-more {
 	margin-top: 0;
 }
 .recent-img {
@@ -1060,7 +1067,7 @@ div#about {
     top: 0;
 	z-index: 1;
 }
-.recent-project-full h2 {
+.recent-project-full h2, .recent-project-full h2 p {
     margin: 0;
 	color: #fff;
 	text-align: left;
@@ -1069,13 +1076,13 @@ div#about {
 	font-size: 15px;
 	color: #333;
 }
-.recent-project-section h3, 
+.recent-project-section h3,
 .recent-project-section p {
     text-align: left;
     font-weight: 400;
 	color: #fff;
 }
-.recent-project-section h3 {
+.recent-project-section h3, .recent-project-section h3 p {
     margin-top: 14px;
     text-transform: uppercase;
     font-size: 32px;
@@ -1184,6 +1191,10 @@ button.btn.btn-primary.btn-submit {
     border-width: 2px;
     margin-top: 10px;
 }
+button.btn.btn-primary.btn-submit:hover {
+    color: #000;
+    background: #fff;
+}
 .testimonial-slider .carousel-item p,
 .testimonial-slider .carousel-item .testi-author {
     font-size: 17px;
@@ -1204,6 +1215,67 @@ button.btn.btn-primary.btn-submit {
 .contact-section .gmap_iframe {
 	height:400px!important;
 }
+
+/******************
+ Details Page
+*******************/
+.details-content .tabs > ul li a.active::after {
+    content: "";
+    position: absolute;
+    top: 42%;
+    right: -15px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #0056b3;
+    display: block;
+    width: 0;
+    z-index: 2;
+}
+.details-content .tabs {
+    display: flex;
+    width: 100%;
+    padding-top: 88px;
+}
+.details-content .tabs > ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+    height: calc(100vh - 88px);
+    position: fixed;
+    z-index: 2;
+}
+.details-content .tabs > ul li {
+    height: calc(100% / 4);
+    border-bottom: 1px solid #666;
+    background: #333;
+    padding-left: 15px;
+    position: relative;
+}
+.details-content .tabs > ul li a {
+    text-transform: uppercase;
+    font-size: 32px;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+.details-content .tabs > ul li a.active {
+    background: #0056b3;
+    color: #fff;
+}
+.details-content .tabs section {
+    padding: 0;
+    display: none;
+}
+.details-content .tabs section.active {
+    display: block;
+}
+.details-content img.carousel-img {
+    object-fit: cover;
+}
+
 div.jsd-footer {
     background-color: #eeecec;
 }
@@ -3969,7 +4041,7 @@ body.touchscreen select,body.touchscreen textarea,body.touchscreen input[type="t
 	button#menuBtn {
 		display: block;
 	}
-	.fullscreen.home-slider h1 {
+	.fullscreen.home-slider h1, .fullscreen.home-slider h1 p {
 		font-size: 34px;
 		line-height: 44px;
 	}
@@ -4041,6 +4113,14 @@ body.touchscreen select,body.touchscreen textarea,body.touchscreen input[type="t
 		font-size: 14px;
 		transform: translateY(-82%);
 		padding: 10px 18px;
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	menu.main-menu a{
+		font-size: 2.2rem;
+	}
+	menu.main-menu .site-menu > li {
+		padding: 0 1.5rem;
 	}
 }
  

@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 $routes->get('/', 'Home::index');
+$routes->get('/projects', 'Home::projects');
+$routes->get('/details/(:num)', 'Home::details/$1');
 $routes->get('dashboard', 'Dashboard::index', ['filter' => 'auth']);
 
 $routes->get('logout', 'Login::logout', ['filter' => 'auth']);
@@ -58,6 +60,14 @@ $routes->post('content/submit-form', 'Content::store');
 $routes->get('content/edit-content/(:any)', 'Content::singleContent/$1');
 $routes->post('content/update/(:any)', 'Content::update/$1');
 $routes->get('content/delete/(:num)', 'Content::delete/$1');
+
+// CRUD RESTful Routes
+$routes->get('project/list', 'Projects::index');
+$routes->get('project/add', 'Projects::create');
+$routes->post('project/submit-form', 'Projects::store');
+$routes->get('project/edit-content/(:any)', 'Projects::singleProject/$1');
+$routes->post('project/update/(:any)', 'Projects::update/$1');
+$routes->get('project/delete/(:num)', 'Projects::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

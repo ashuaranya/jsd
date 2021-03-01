@@ -29,13 +29,15 @@ echo view('common/header.php');
                         <form enctype="multipart/form-data" method="post" id="add_create" name="add_create"
                               action="<?= site_url('content/update/'.$content_obj['content_type']) ?>">
                             <input type="hidden" name="content_id" value="<?= $content_obj['content_id'] ?>" class="form-control">
-                            <input type="hidden" name="content_background_image" value="<?= trim($content_obj['background_image']) ?>" class="form-control">
+                            <input type="hidden" name="content_type" value="<?= $content_obj['content_type'] ?>" class="form-control">
+                            <input type="hidden" name="content_background_image" value="<?= trim($content_obj['background_image']) ? trim($content_obj['background_image']) : '' ?>" class="form-control">
                             <?php echo $session->getFlashdata('sucess_message'); ?>
                             <?php echo $session->getFlashdata('error_message'); ?>
                             <div class="form-group">
                                 <label><b>Background Image</b></label><br>
-                                <img accept="image/*" height="150" width="150" src="<?= base_url('assets/uploads/'.$content_obj['background_image']) ?>">
-                                <input type="file"  name="background_image" class="form-control">
+                                <?php if(trim($content_obj['background_image']) !== "") { ?>
+                                    <img accept="image/*" height="150" width="150" src="<?= base_url('assets/uploads/'.$content_obj['background_image']) ?>">
+                                <?php } ?><input type="file"  name="background_image" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label><b>Heading</b></label>
@@ -177,7 +179,6 @@ echo view('common/footer_links.php');
             console.warn( 'Build id: pz93cy9ux3cs-wsd16ukcoufg' );
             console.error( error );
         } );
-
 
     if ($("#add_create").length > 0) {
         $("#add_create").validate({
