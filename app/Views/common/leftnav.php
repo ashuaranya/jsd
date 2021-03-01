@@ -33,7 +33,12 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Manage Navbar</span></a>
     </li>
-
+    <!-- Nav Item - Charts -->
+    <li class="nav-item <?= ($active_link == 'project') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('project/list') ?>">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Manage Project List</span></a>
+    </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link <?= ($active_link == 'content') ? 'active' : 'collapsed' ?>" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -51,18 +56,7 @@
             </div>
         </div>
     </li>
-    <!-- Nav Item - Charts -->
-    <li class="nav-item <?= ($active_link == 'project') ? 'active' : '' ?>">
-        <a class="nav-link" href="<?= base_url('project/list') ?>">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Manage Project List</span></a>
-    </li>
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
-    </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

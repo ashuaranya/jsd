@@ -54,7 +54,7 @@ $routes->post('update', 'Nav::update');
 $routes->get('delete/(:num)', 'Nav::delete/$1');
 
 // CRUD RESTful Routes
-$routes->get('content/navs-list', 'Contentupdate::index');
+$routes->get('content/navs-list', 'Content::index');
 $routes->get('content/nav-form', 'Content::create');
 $routes->post('content/submit-form', 'Content::store');
 $routes->get('content/edit-content/(:any)', 'Content::singleContent/$1');
