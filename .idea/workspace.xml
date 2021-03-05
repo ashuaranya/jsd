@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="137e26cc-e559-4083-96ff-036fa8c365fc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Config/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/Routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/project_details/add.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/project_details/add1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/project_details/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/project_details/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Projects.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Projects.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/projects.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/projects.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/projects/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/projects/view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +22,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -137,16 +152,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="13" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../harrison" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Views/project_details" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\jsd\app\Views\project_details" />
       <recent name="C:\xampp\htdocs\jsd\app\Views" />
       <recent name="C:\xampp\htdocs\jsd\app\Models" />
       <recent name="C:\xampp\htdocs\jsd\app\Controllers" />
       <recent name="C:\xampp\htdocs\jsd\assets\js" />
-      <recent name="C:\xampp\htdocs\jsd\app\Views\content" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\jsd\assets\img" />
@@ -180,7 +195,12 @@
       <workItem from="1614101293681" duration="5110000" />
       <workItem from="1614143706962" duration="19863000" />
       <workItem from="1614191456880" duration="54000" />
-      <workItem from="1614591492051" duration="2296000" />
+      <workItem from="1614591492051" duration="5391000" />
+      <workItem from="1614666668090" duration="770000" />
+      <workItem from="1614855233328" duration="2886000" />
+      <workItem from="1614876100535" duration="23000" />
+      <workItem from="1614881097349" duration="766000" />
+      <workItem from="1614936601976" duration="1828000" />
     </task>
     <servers />
   </component>

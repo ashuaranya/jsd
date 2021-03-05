@@ -63,7 +63,6 @@ echo view('common/header.php');
                                     <td><?= $project['project_order']?></td>
                                     <td><?= $project['is_active'] ? "Active" : "InActive"; ?></td>
                                     <td>
-                                        <a href="<?php echo base_url('project-details/list/'.$project['project_id']);?>" class="btn btn-primary btn-sm">Manage</a>
                                         <a href="<?php echo base_url('project/edit-content/'.$project['project_id']);?>" class="btn btn-primary btn-sm">Edit</a>
                                         <a href="<?php echo base_url('project/delete/'.$project['project_id']);?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>

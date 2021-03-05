@@ -68,6 +68,16 @@ $routes->post('project/submit-form', 'Projects::store');
 $routes->get('project/edit-content/(:any)', 'Projects::singleProject/$1');
 $routes->post('project/update/(:any)', 'Projects::update/$1');
 $routes->get('project/delete/(:num)', 'Projects::delete/$1');
+
+
+// CRUD RESTful Routes
+$routes->get('project-details/list/(:any)', 'Projectdetails::index/$1');
+$routes->get('project-details/list', 'Projectdetails::index');
+$routes->get('project-details/add', 'Projectdetails::create');
+$routes->post('project-details/submit-form', 'Projectdetails::store');
+$routes->get('project-details/edit-content/(:any)', 'Projectdetails::singleProject/$1');
+$routes->post('project-details/update/(:any)', 'Projectdetails::update/$1');
+$routes->get('project-details/delete/(:num)', 'Projectdetails::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

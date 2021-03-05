@@ -52,7 +52,7 @@ echo view('common/main_site_header.php');
                             <div class="recent-project-section">
                                 <?= trim($project['details']) ?>
                             </div>
-                            <button onclick="location.href ='<?= base_url('details/1') ?>';" class="btn-recent btn-more">Detail View</button>
+                            <button onclick="location.href ='<?= base_url('details/'.$project['project_id']) ?>';" class="btn-recent btn-more">Detail View</button>
                         </div>
                     </a>
                 </div>

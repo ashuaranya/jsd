@@ -75,7 +75,7 @@ class Projects extends BaseController
     // show single nav
     public function singleProject($id = null){
         $data = $this->data;
-        $data['project_obj'] = $this->model->where('project_id', $id)->first();
+        $data['project_obj'] = $this->model->where($this->model->primaryKey, $id)->first();
         $data['page_title'] = 'Project';
         $data['active_link'] = 'project';
         $data['heading'] = 'Add Project';
@@ -117,9 +117,8 @@ class Projects extends BaseController
 				unlink(ROOTPATH . 'assets/uploads/'.$this->request->getVar('project_background_image'));
             } else {
 				$data['project_obj'] = $this->request->getVar();
-				$data['left_navs'] = $navModel->orderBy('nav_order', 'ASC')->findAll();
                 $this->session->setFlashdata('error_message','<div class="alert alert-danger">Please upload correct image.</div>');
-                return view('content/'.$content_type, $data);
+                return view($this->currentPage.'/edit', $data);
 			}
         }
 
@@ -132,7 +131,7 @@ class Projects extends BaseController
     // delete nav
     public function delete($id = null){
         $navModel = new NavModel();
-        $data['nav'] = $navModel->where('nav_id', $id)->delete($id);
+        $data['nav'] = $this->model->where($this->model->primaryKey, $id)->delete($id);
         $data['page_title'] = 'Navbar';
         $data['active_link'] = 'navbar';
         $data['heading'] = 'Manage Navbar';
